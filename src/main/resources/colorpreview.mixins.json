@@ -4,11 +4,9 @@
   "package": "net.foxes4life.colorpreview.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "ChatScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "mixins": [
-    "ChatScreenMixin"
-  ]
+  }
 }
