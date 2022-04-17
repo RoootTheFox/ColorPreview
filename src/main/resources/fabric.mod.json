@@ -8,16 +8,8 @@
     "RoootTheFox"
   ],
   "contact": {},
-  "license": "WTFPL",
+  "license": "MIT",
   "environment": "client",
-  "entrypoints": {
-    "client": [
-      "net.foxes4life.colorpreview.ColorPreviewClient"
-    ],
-    "main": [
-      "net.foxes4life.colorpreview.ColorPreview"
-    ]
-  },
   "mixins": [
     "colorpreview.mixins.json"
   ],
