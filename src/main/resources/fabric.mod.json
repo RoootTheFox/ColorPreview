@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "colorpreview",
+  "version": "${version}",
+  "name": "ColorPreview",
+  "description": "Preview colors for Essentials plugin color formatting.",
+  "authors": [
+    "RoootTheFox"
+  ],
+  "contact": {},
+  "license": "WTFPL",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.foxes4life.colorpreview.ColorPreviewClient"
+    ],
+    "main": [
+      "net.foxes4life.colorpreview.ColorPreview"
+    ]
+  },
+  "mixins": [
+    "colorpreview.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}
