@@ -1,8 +1,6 @@
 package net.foxes4life.colorpreview;
 
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
+import net.minecraft.text.*;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -22,7 +20,8 @@ public class Parser {
                 if(matcher.find()) {
                     if(!(i+1 >= split.length)) {
                         String s = matcher.group().substring(2);
-                        texts.add(new LiteralText(replaceColorCodes(split[i+1]).replace("§r", "§r§f")).setStyle(Style.EMPTY.withColor(Integer.parseInt(s, 16))));
+                        // wtf mojang
+                        texts.add(MutableText.of(new LiteralTextContent(replaceColorCodes(split[i+1]).replace("§r", "§r§f"))).setStyle(Style.EMPTY.withColor(Integer.parseInt(s, 16))));
                     }
                 }
             }
@@ -30,7 +29,7 @@ public class Parser {
             e.printStackTrace();
         }
 
-        LiteralText res = new LiteralText(replaceColorCodes(split.length > 0 ? split[0] : "").replace("§r", "§r§f"));
+        MutableText res = MutableText.of(new LiteralTextContent(replaceColorCodes(split.length > 0 ? split[0] : "").replace("§r", "§r§f")));
 
         for (Text text : texts) {
             res.append(text);
